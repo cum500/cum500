@@ -55,7 +55,6 @@
         }
         .logo img {
             height: 50px;
-            transition: opacity 0.2s ease;
         }
         .logo-text {
             font-weight: 700;
@@ -64,39 +63,38 @@
             text-shadow: 0 0 5px var(--accent-glow);
         }
 
-        /* NEW LOGO GLITCH "Top-to-Bottom" style */
         .logo:hover img {
-            opacity: 0.25;
-        }
-        .logo::before, .logo::after {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 0; left: 0;
-            width: 50px; height: 50px;
-            background: url('cum500.png');
-            background-size: 50px;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0;
-        }
-        .logo:hover::before {
-            animation: logo-glitch-before 2s infinite linear alternate-reverse;
-            opacity: 1;
-        }
-        .logo:hover::after {
-            animation: logo-glitch-after 2s infinite linear alternate-reverse;
-            opacity: 1;
+             animation: pixel-glitch 0.4s infinite;
         }
 
-        @keyframes logo-glitch-before {
-            0% { clip-path: inset(89% 0 1% 0); box-shadow: 0 0 25px 5px var(--accent-glow); transform: translateX(-3px); }
-            100% { clip-path: inset(43% 0 25% 0); box-shadow: none; transform: translateX(3px); }
+        @keyframes pixel-glitch {
+          0% {
+            transform: translate(0);
+          }
+          10% {
+            transform: translate(-2px, -2px);
+            filter: brightness(1.5) contrast(1.5);
+          }
+          20% {
+            transform: translate(2px, 2px);
+          }
+          30% {
+            transform: translate(-1px, 1px);
+            filter: none;
+          }
+          40% {
+            transform: translate(1px, -1px);
+            box-shadow: 0 0 25px 5px var(--accent-glow);
+          }
+          50% {
+            transform: translate(0);
+            box-shadow: none;
+          }
+          100% {
+            transform: translate(0);
+          }
         }
-        @keyframes logo-glitch-after {
-            0% { clip-path: inset(79% 0 19% 0); box-shadow: none; transform: translateX(3px); }
-            100% { clip-path: inset(10% 0 81% 0); box-shadow: 0 0 25px 5px rgba(255,255,255,0.7); transform: translateX(-3px); }
-        }
+
 
         .main-nav a { color: var(--secondary-text-color); text-decoration: none; font-weight: 600; transition: color 0.3s ease, text-shadow 0.3s ease; padding: 5px 10px; }
         .main-nav a:hover { color: var(--accent-color); text-shadow: 0 0 15px var(--accent-color); }
@@ -110,6 +108,7 @@
         .glitch-wrapper { position: relative; display: inline-block; }
         .hero h1 { font-size: 5rem; font-weight: 700; line-height: 1.2; color: var(--primary-text-color); position: relative; cursor: pointer; }
         
+        /* RESTORED H1 GLITCH EFFECT */
         .glitch-wrapper:hover h1 { animation: glitch-animation 0.4s infinite; }
         .hero h1::before, .hero h1::after { content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; opacity: 0; background: var(--background-color); }
         .hero h1::before { left: 2px; text-shadow: -2px 0 var(--glitch-color-1); animation: glitch-before 2s infinite linear alternate-reverse; }
@@ -145,30 +144,10 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            transition: opacity 0.2s ease;
         }
         .logo-container:hover img {
-            opacity: 0.25;
+             animation: pixel-glitch 0.4s infinite;
         }
-        .logo-container::before, .logo-container::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: url('cum500.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            opacity: 0;
-        }
-        .logo-container:hover::before {
-            animation: logo-glitch-before 2s infinite linear alternate-reverse;
-            opacity: 1;
-        }
-        .logo-container:hover::after {
-            animation: logo-glitch-after 2s infinite linear alternate-reverse;
-            opacity: 1;
-        }
-
 
         .info-list { list-style: none; padding: 0; text-align: center; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; max-width: 800px; margin: 0 auto;}
         .info-list li { background: var(--surface-color); padding: 20px; border-radius: 10px; border: 1px solid var(--accent-color); font-weight: 600; }
@@ -176,6 +155,10 @@
         
         .social-links {
             text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
         .social-icon {
             display: inline-flex;
@@ -285,7 +268,7 @@
         <div class="container">
             <a href="#hero" class="logo">
                 <img src="cum500.png" alt="CUM 500 Logo">
-                <span class="logo-text">CUM 500.</span>
+                <span class="logo-text">CUM 500</span>
             </a>
             <nav class="main-nav">
                 <ul>
@@ -305,7 +288,7 @@
                 <div class="glitch-wrapper">
                     <h1 data-text="CUM 500">CUM 500</h1>
                 </div>
-                <p class="subtitle">Futuristic Memecoins</p>
+                <p class="subtitle">Completely Undervalued Memecoins 500</p>
                 <a href="https://letsbonk.com/" target="_blank" class="cta-button">APE ON LETSBONK</a>
             </div>
         </section>
@@ -319,7 +302,7 @@
                             <img src="cum500.png" alt="CUM 500 Logo">
                         </div>
                         <p style="margin-top: 2rem;">
-                           Let's be clear: this is a memecoin, designed for speculation and humor. But even a glorious shitcoin like ours can have a small, strange utility. CUM 500 is a living monument to financial degeneracy—a curated list of the <strong>Top 500 most undervalued memecoins</strong> in the wild.
+                           Welcome to <strong>COMPLETELY UNDERVALUED MEMECOINS 500</strong>, or <strong>CUM 500</strong> for short. Let's be clear: this is a memecoin, designed for speculation and humor. But even a glorious shitcoin like ours can have a small, strange utility. Our project is a living monument to financial degeneracy—a curated list of the Top 500 most undervalued memecoins in the wild.
                         </p>
                         <p>
                            Think your coin is a masterpiece of irresponsibility that belongs here? <strong>Reach out to us.</strong> If our highly-unqualified experts agree, we'll feature you on the site and share your project with our community of degens. It’s the least we can do.
@@ -353,7 +336,7 @@
             <section id="contact" class="content-section">
                 <h2>Contact</h2>
                 <p style="text-align:center; max-width: 600px; margin: 0 auto 30px auto;">
-                    For inquiries or to submit your memecoin for our Top 500 list, reach out to our lead dev.
+                    For inquiries or to submit your memecoin for our Top 500 list, reach out to our lead dev or join the community.
                 </p>
                 <div class="social-links">
                     <a href="https://x.com/tradingboss007" target="_blank" class="social-icon">
@@ -363,6 +346,14 @@
                             </g>
                         </svg>
                         <span>Our Dev on X</span>
+                    </a>
+                    <a href="https://x.com/i/communities/1936094511995773086" target="_blank" class="social-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <g>
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                            </g>
+                        </svg>
+                        <span>Our X Community</span>
                     </a>
                 </div>
             </section>
