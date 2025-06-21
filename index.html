@@ -28,24 +28,24 @@
             line-height: 1.7;
             overflow-x: hidden;
             cursor: crosshair;
-            background-image: 
+            background-image:
                 linear-gradient(var(--grid-color) 1px, transparent 1px),
                 linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
             background-size: 40px 40px;
             animation: moveGrid 10s linear infinite;
         }
         @keyframes moveGrid { from { background-position: 0 0; } to { background-position: 40px 40px; } }
-        
+
         .particle {
             position: fixed; background-color: var(--accent-color); border-radius: 50%; pointer-events: none; z-index: 9999; width: 8px; height: 8px; box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color); animation: particle-fade 1s forwards;
         }
         @keyframes particle-fade { from { opacity: 1; transform: scale(1); } to { opacity: 0; transform: scale(0); } }
-        
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
         .container { max-width: 960px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
         .main-header { padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 10; background: rgba(13, 13, 26, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--surface-color); }
         .main-header .container { display: flex; justify-content: space-between; align-items: center; }
-        
+
         .logo {
             text-decoration: none;
             display: flex;
@@ -101,13 +101,13 @@
         .main-nav ul { list-style: none; display: flex; gap: 15px; }
 
         .hero { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
-        
+
         #threejs-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
         .hero-content { position: relative; z-index: 2; }
-        
+
         .glitch-wrapper { position: relative; display: inline-block; }
         .hero h1 { font-size: 5rem; font-weight: 700; line-height: 1.2; color: var(--primary-text-color); position: relative; cursor: pointer; }
-        
+
         /* RESTORED H1 GLITCH EFFECT */
         .glitch-wrapper:hover h1 { animation: glitch-animation 0.4s infinite; }
         .hero h1::before, .hero h1::after { content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; opacity: 0; background: var(--background-color); }
@@ -118,7 +118,7 @@
         @keyframes glitch-animation { 0% { transform: translate(0); } 20% { transform: translate(-3px, 3px); } 40% { transform: translate(-3px, -3px); } 60% { transform: translate(3px, 3px); } 80% { transform: translate(3px, -3px); } 100% { transform: translate(0); } }
 
         .hero .subtitle { font-size: 1.5rem; color: var(--accent-color); margin: 20px 0 40px 0; text-shadow: 0 0 10px var(--accent-glow); }
-        
+
         .cta-button { display: inline-block; background: var(--accent-color); color: var(--background-color); padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; position: relative; overflow: hidden; border: 2px solid var(--accent-color); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: pulse 2s infinite; }
         .cta-button::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent); transition: left 0.6s ease; }
         .cta-button:hover::before { left: 100%; }
@@ -128,11 +128,11 @@
         .content-section { padding: 80px 20px; background: rgba(26, 26, 46, 0.3); margin-bottom: 2rem; border-radius: 10px; opacity: 0; transform: translateY(50px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
         .content-section.is-visible { opacity: 1; transform: translateY(0); }
         .content-section h2 { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 35px; text-align: center; }
-        
+
         .about-layout { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; justify-content: center; }
         .about-text { flex: 1; min-width: 300px; text-align: center; }
         .about-text strong { color: var(--primary-text-color); }
-        
+
         .logo-container {
             position: relative;
             width: 300px;
@@ -152,7 +152,7 @@
         .info-list { list-style: none; padding: 0; text-align: center; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; max-width: 800px; margin: 0 auto;}
         .info-list li { background: var(--surface-color); padding: 20px; border-radius: 10px; border: 1px solid var(--accent-color); font-weight: 600; }
         .info-list li span { display: block; font-size: 0.9rem; color: var(--secondary-text-color); margin-bottom: 5px; }
-        
+
         .social-links {
             text-align: center;
             display: flex;
@@ -289,7 +289,7 @@
                     <h1 data-text="CUM 500">CUM 500</h1>
                 </div>
                 <p class="subtitle">Completely Undervalued Memecoins 500</p>
-                <a href="https://letsbonk.com/" target="_blank" class="cta-button">APE ON LETSBONK</a>
+                <a href="https://four.meme/" target="_blank" class="cta-button">APE ON FOUR.MEME</a>
             </div>
         </section>
 
@@ -302,10 +302,10 @@
                             <img src="cum500.png" alt="CUM 500 Logo">
                         </div>
                         <p style="margin-top: 2rem;">
-                           Welcome to <strong>COMPLETELY UNDERVALUED MEMECOINS 500</strong>, or <strong>CUM 500</strong> for short. Let's be clear: this is a memecoin, designed for speculation and humor. But even a glorious shitcoin like ours can have a small, strange utility. Our project is a living monument to financial degeneracy—a curated list of the Top 500 most undervalued memecoins in the wild.
+                            Welcome to <strong>COMPLETELY UNDERVALUED MEMECOINS 500</strong>, or <strong>CUM 500</strong> for short. Let's be clear: this is a memecoin, designed for speculation and humor. But even a glorious shitcoin like ours can have a small, strange utility. Our project is a living monument to financial degeneracy—a curated list of the Top 500 most undervalued memecoins in the wild.
                         </p>
                         <p>
-                           Think your coin is a masterpiece of irresponsibility that belongs here? <strong>Reach out to us.</strong> If our highly-unqualified experts agree, we'll feature you on the site and share your project with our community of degens. It’s the least we can do.
+                            Think your coin is a masterpiece of irresponsibility that belongs here? <strong>Reach out to us.</strong> If our highly-unqualified experts agree, we'll feature you on the site and share your project with our community of degens. It’s the least we can do.
                         </p>
                     </div>
                 </div>
@@ -327,9 +327,9 @@
                     Are you ready to make a questionable financial decision? Great. Here's how to do it.
                 </p>
                 <ul class="info-list">
-                    <li><span>Step 1: Get a Wallet</span>Download Phantom or another Solana wallet. It's free, so don't complain.</li>
-                    <li><span>Step 2: Get Some SOL</span>You need SOL to swap. If you don't have any, buy it on an exchange or directly in the wallet and send it there.</li>
-                    <li><span>Step 3: Go to letsbonk</span>Connect to letsbonk, paste the token address (which we'll give you when we feel like it) and swap your SOL for this new, worthless treasure. Confirm and pray.</li>
+                    <li><span>Step 1: Get a Wallet</span>Download MetaMask wallet. It's free, so don't complain.</li>
+                    <li><span>Step 2: Get Some BNB</span>You need BNB to swap for tokens on the Binance Smart Chain. Buy it on an exchange and send it to your wallet.</li>
+                    <li><span>Step 3: Go to a DEX</span>Connect to a decentralized exchange like PancakeSwap, paste the token address (which we'll give you when we feel like it) and swap your BNB for this new, worthless treasure. Confirm and pray.</li>
                 </ul>
             </section>
             
@@ -347,7 +347,7 @@
                         </svg>
                         <span>Our Dev on X</span>
                     </a>
-                    <a href="https://x.com/i/communities/1936094511995773086" target="_blank" class="social-icon">
+                    <a href="https://x.com/i/communities/1936394024018944097" target="_blank" class="social-icon">
                         <svg viewBox="0 0 24 24" aria-hidden="true">
                             <g>
                                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
